@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macro %}
+
+{% block page_leftbar %}
+<div class="popular-article">
+    <a href="http://www.baidu.com">
+        <img src="{{ url_for('static', filename='white.jpg') }}" class="img-responsive" alt="" >
+        <div class="popular-article-info autocar-linear">
+            <h1>这是这是今日头条</h1>
+            <p>这里是今日头条的摘要，这个摘要内容尽量不要太长，不然就不太美观了</p>
+        </div>
+    </a>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="popular-article">
+            <a href="http://www.baidu.com" >
+                <img src="{{ url_for('static', filename='head1.jpg') }}" class="img-responsive" alt="" >
+                <div class="popular-article-info autocar-linear">
+                    <h3>这是第一篇推荐文章</h3>
+                    <p>这里是第二篇送的丝带丝带丝带</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="popular-article">
+            <a href="http://www.baidu.com" >
+                <img src="{{ url_for('static', filename='header.jpg') }}" class="img-responsive" alt="" >
+                <div class="popular-article-info autocar-linear">
+                    <h3>这是第二篇推荐文章</h3>
+                    <p>这里是第三片文章的摘要</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% include '_posts.html' %}
+<HR style="FILTER: alpha(opacity=0,finishopacity=100,style=1)" width="95%" color=#987cb9 SIZE=3>
+<div class="row">
+    <div class="text-center">
+{% if pagination %}
+<div class="pagination">
+    {{ macro.pagination_widget(pagination, '.index') }}
+</div>
+{% endif %}
+    </div>
+</div>
+<!--post文章列表结束-->
+{% endblock %}
+
+<!--侧栏-->
+{% block page_rightbar %}
+{% include "rightbar.html" %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block extra_linkfiles %}
+<script src="{{ url_for('static', filename='ckeditor/ckeditor.js') }}"></script>
+{% endblock %}
+
+{% block page_leftbar %}
+<div>
+<form>
+    <textarea name="editor1" id="editor1" rows="30" cols="80">
+        This is my textarea to be replaced with CKEditor.
+    </textarea>
+    <script>
+    CKEDITOR.replace('editor1', {
+    filebrowserUploadurl: '/ckupload/',});
+    </script>
+</form>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,23 @@
+{% for post in posts %}
+<div class="well autocar-post">
+<div class="row">
+    <div class="col-md-4">
+        <a href="{{ url_for('.post',id=post.id) }}"><img src="{{ post.cover }}" class="img-responsive" alt=""></a>
+    </div>
+    <div class="col-md-8">
+        <a href="{{ url_for('.post',id=post.id) }}"><h3>{{ post.title }}</h3></a>
+        <ul class="autocar-post-info">
+            <li><a href="{{ url_for('.post', id=post.id ) }}"><img src="{{ post.author.headimg }}" class="autocar-head-img img-circle"><span style="margin-left:5px;color:grey">{{ post.author.username }}</span></a></li>
+            <li class="post-time"><span class="time">{{ moment(post.timestamp).fromNow() }}</span></li>
+            <li class="comment"><i class="icon-comment"> </i>0</li>
+            {% if post.author==current_user %}
+            <li class="moderate"><a href="{{ url_for('.edit',id=post.id) }}" title="修改文章"><i class="icon-edit">修改文章</i></a></li>
+            {% endif %}
+        </ul>
+        <p class="autocar-abstract">
+        {{ post.abstract }}
+        </p>
+    </div>
+</div>
+</div>
+{% endfor %}

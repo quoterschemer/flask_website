@@ -1,0 +1,64 @@
+#encoding: utf-8
+import os
+from flask import render_template, redirect, url_for, request, make_response
+from . import main
+from flask.ext.login import login_required, current_user
+from ..models import Permission
+from ..decorators import permission_required
+import json
+import re
+import datetime
+import random
+import urllib
+
+@main.route('/', methods=['GET', 'POST'])
+def index():
+    return render_template('index.html')
+
+@main.route('/post-article')
+@login_required
+def post_article():
+    return render_template('post_article.html')
+
+@main.route('/article/<article_id>', methods=['GET', 'POST'])
+def article(article_id):
+    return render_template('single.html')
+
+def gen_rnd_filename():
+    filename_prefix = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+    return '%s%s' % (filename_prefix, str(random.randrange(1000, 10000)))
+
+@main.route('/ckupload/', methods=['POST'])
+def ckupload():
+    error = ''
+    url = ''
+    callback = request.args.get("CKEditorFuncNum")
+    if request.method == 'POST' and 'upload' in request.files:
+        fileobj = request.files['upload']
+        fname, fext = os.path.splitext(fileobj.filename)
+        rnd_name = '%s%s' % (gen_rnd_filename(), fext)
+        filepath = os.path.join('/home/monkey/website/flask/app/static/', 'upload', rnd_name)
+        dirname = os.path.dirname(filepath)
+        if not os.path.exists(dirname):
+            try:
+                os.makedirs(dirname)
+            except:
+                error = 'ERROR_CREATE_DIR'
+        elif not os.access(dirname, os.W_OK):
+            error = 'ERROR_DIR_NOT_WRITEABLE'
+        if not error:
+            fileobj.save(filepath)
+            url = url_for('static', filename='%s/%s' % ('upload', rnd_name))
+    else:
+        error = 'post error'
+    res = """
+
+<script type="text/javascript">
+  window.parent.CKEDITOR.tools.callFunction(%s, '%s', '%s');
+</script>
+
+""" % (callback, url, error)
+    response = make_response(res)
+    response.headers["Content-Type"] = "text/html"
+    return response
+

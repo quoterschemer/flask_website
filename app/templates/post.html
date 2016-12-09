@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block page_leftbar %}
+<!--文章內容-->
+<div class="article">
+    <h1 class="article-title">{{ post.title }}</h1>
+    <ul class="autocar-post-info">
+        <li><a href="http://www.baidu.com"><img src="{{ post.author.headimg }}" class="autocar-head-img img-circle"><span style="margin-left:5px;">{{ post.author.username }}</span></a></li>
+        <li class="post-time"><span class="time">{{ post.timestamp }}</span></li>
+        {% if post.author==current_user %}
+        <li class="moderate"><a href="{{ url_for('.edit',id=post.id) }}" title="修改文章"><i class="icon-edit">修改文章</i></a></li>
+        {% endif %}
+    </ul> 
+
+    <HR style="FILTER: alpha(opacity=0,finishopacity=100,style=1)" width="85%" color=#987cb9 SIZE=4>
+    <!--这里是文章的正文内容-->
+    <div class="autocar-article-content">
+        <img src="{{ post.cover }}" class="img-reponsive autocar-post-cover">
+        {{ post.body | safe }}
+    </div>
+
+    <HR style="FILTER: alpha(opacity=0,finishopacity=100,style=1)" width="85%" color=#987cb9 SIZE=4>
+    <p>test</p>
+
+</div>
+{% endblock %}
+
+{% block page_rightbar %}
+{% include "rightbar.html" %}
+{% endblock %}

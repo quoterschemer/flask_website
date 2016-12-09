@@ -1,0 +1,68 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}AutocarWeekly{% endblock %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('main.index') }}">AutocarWeekly</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url_for('main.index') }}">主页</a></li>
+            </ul>
+                <form class="navbar-search pull-right">
+                    <input type="text" class="search-query" placeholder="Search">
+                </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="page-content">
+        {% block page_content %}{% endblock %}
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="http://www.baidu.com"><h4>关于我们</h4></a>
+                    <a href="http://www.baidu.com"><h4>广告服务</h4></a>
+                    <a href="http://www.baidu.com"><h4>投诉建议</h4></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <span>Copyright © <a href="http://www.huxiu.com">AutocarWeekly</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+{% endblock %}
+
+

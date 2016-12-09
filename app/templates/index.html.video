@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="popular-article">
+                <a href="http://www.baidu.com">
+                    <img src="{{ url_for('static', filename='white.jpg') }}" class="img-responsive" alt="" >
+                    <div class="popular-article-info autocar-linear">
+                        <h1>这是今日头条</h1>
+                        <p>这里是今日头条的摘要，这个摘要内容尽量不要太长，不然就不太美观了</p>
+                    </div>
+                </a>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="popular-article">
+                        <a href="http://www.baidu.com" >
+                            <img src="{{ url_for('static', filename='head1.jpg') }}" class="img-responsive" alt="" >
+                            <div class="popular-article-info autocar-linear">
+                                <h3>这是第一篇推荐文章</h3>
+                                <p>这里是第二篇送的丝带丝带丝带</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="popular-article">
+                        <a href="http://www.baidu.com" >
+                            <img src="{{ url_for('static', filename='header.jpg') }}" class="img-responsive" alt="" >
+                            <div class="popular-article-info autocar-linear">
+                                <h3>这是第二篇推荐文章</h3>
+                                <p>这里是第三片文章的摘要</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="well autocar-post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="http://www.baidu.com"><img src="{{ url_for('static', filename='header.jpg') }}" class="img-responsive img-rounded" alt=""></a>
+                    </div>
+                    <div class="col-md-8">
+                        <a href="http://www.baidu.com"><h3>那辆最受段子手喜爱的豪车，终于停产了</h3></a>
+                        <ul class="autocar-post-info">
+                            <li><a href="http://www.baidu.com"><img src="{{ url_for('static',filename='head.jpg')}}" class="autocar-head-img img-circle"><span style="margin-left:5px;color:grey">候正国</span></a></li>
+                            <li><span class="time">1小时前</span></li>
+                            <li><i class="icon-comment"> </i>0</li>
+                            <li><i class="icon-star"> </i>3</li>
+                        </ul>
+                        <p class="autocar-abstract">这里是文章的摘那么美观了。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="well autocar-post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="http://www.baidu.com"><img src="{{ url_for('static', filename='header.jpg') }}" class="img-responsive" alt=""></a>
+                    </div>
+                    <div class="col-md-8">
+                        <h4>激荡20年:IE浏览器的辉煌与落寞,这里标题我也可以的加长了一些</h4>
+                        <ul class="autocar-post-info">
+                            <li><a href="http://www.baidu.com"><img src="{{ url_for('static',filename='head.jpg')}}" class="autocar-head-img img-circle"><span style="margin-left:5px;">候正国</span></a></li>
+                            <li><span class="time">1小时前</span></li>
+                            <li><i class="comment"><em>0</em></i></li>
+                            <li><i class="collection"><em>3</em></i></li>
+                        </ul>
+                        <p class="autocar-abstract">这里是文章的摘要,现在测试一下如果文章的摘要很长的话会怎么样吧，如果很长有可能会超出图片的底线，这样页面就变得不那么美观了。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="well autocar-post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="http://www.baidu.com"><img src="{{ url_for('static', filename='header.jpg') }}" class="img-responsive" alt=""></a>
+                    </div>
+                    <div class="col-md-8">
+                        <h4>激荡20年:IE浏览器的辉煌与落寞,这里标题我也可以的加长了一些</h4>
+                        <ul class="autocar-post-info">
+                            <li><a href="http://www.baidu.com"><img src="{{ url_for('static',filename='head.jpg')}}" class="autocar-head-img img-circle"><span style="margin-left:5px;">候正国</span></a></li>
+                            <li><span class="time">1小时前</span></li>
+                            <li><i class="comment"><em>0</em></i></li>
+                            <li><i class="collection"><em>3</em></i></li>
+                        </ul>
+                        <p class="autocar-abstract">这里是文章的摘要,现在测试一下如果文章的摘要很长的话会怎么样吧，如果很长有可能会超出图片的底线，这样页面就变得不那么美观了。</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--post文章列表结束-->
+        </div>
+
+        <!--侧栏-->
+        <div class="col-md-4 autocar-sidebar">
+            <!--热议-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="popular-article">
+                        <a href="http://www.baidu.com">
+                            <img src="{{ url_for('static', filename='head2.jpg')}}" class="img-responsive" alt="热议话题">
+                            <div class="popular-article-info autocar-linear">
+                                <h4>这里是热议话题</h4>
+                            </div>
+                        </a>
+                        <h4 class="autocar-banner">热议话题</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!--广告-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="autocar-advertisement">
+                        <video controls="controls">
+                            <source src="{{url_for('video',filename='advertise.mp4')}}" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <!--热门文章-->
+            <div class="well autocar-hot-article">
+                <h4 class="autocar-banner">热门文章</h4>
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="{{url_for('static', filename='header.jpg') }}" class="img-responsive" alt="#ts">
+                        <h4>这是热文中的一篇文章</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="{{url_for('static', filename='header.jpg') }}" class="img-responsive" alt="#ts">
+                        <h4>这是热文中的一篇文章</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}
+

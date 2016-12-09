@@ -1,0 +1,206 @@
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+
+html {
+    height: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+body { padding-top: 50px;
+    height: 100%;
+}
+
+.content {
+    position: relative;
+    height: auto;
+    min-height: 100%;
+}
+.page-content {
+    padding-bottom: 250px;
+}
+img { 
+    margin-bottom: .5em;
+    width: 100%;
+}
+
+.time {
+    font-size: 100%;
+}
+.popular-article {
+    margin-top: 2em;
+    position: relative;
+} 
+.popular-article-info {
+    position: absolute;
+    color: white;
+    padding-left: 1em;
+    padding-bottom: .1em;
+    left:0;
+    bottom:0;
+}
+
+.popular-article-info h1,.popular-article-info h3 {
+    margin-top: .2em;
+}
+
+.popular-article-info p {
+    color : lightgrey;
+    margin-bottom:.1em;
+}
+
+.autocar-banner {
+    position: absolute;
+    display: block;
+    padding-top:.6em;
+    padding-bottom: .7em;
+    padding-left: .3em;
+    left:0;
+    top: 0;
+    width: 100%;
+    background: rgba(220,0,0,0.85);
+    color: white;
+    margin-top:0px;
+    z-index: 2;
+}
+
+.autocar-post {
+    margin-top: 1.2em;
+    padding-top: 1em;
+}
+.autocar-post a, .autocar-post a:focus, .autocar-post a:hover {
+    color: #333;
+    text-decoration: none;
+}
+.autocar-post h3{
+    color: black;
+    margin-top: .2em;
+}
+.autocar-post .autocar-abstract{
+    margin-top: .2em;
+    color: grey;
+    font: 80%;
+}
+.autocar-head-img {
+    padding: .1em;
+    width: 30px;
+    height: 30px;
+}
+.well {
+    margin-top: 2em;
+    padding: .7em;
+}
+
+.autocar-hot-article {
+    padding: 0 0;
+    position: relative;
+}
+
+.autocar-hot-article img {
+    margin-top: 0;
+}
+
+.autocar-hot-article .row {
+    margin-bottom:1.5em;
+}
+
+.autocar-hot-article .row h4 {
+    margin-left : .2em;
+    color: black;
+    font-size: 1.5em;
+}
+
+.autocar-margin-top {
+    margin-top: 1.5em;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding:1.5em 0px 2em 0px;
+    background-color: #2d3237;
+    color: darkgrey;
+}
+
+.footer .row{
+    margin-top:.5em;
+}
+.footer a {
+    display: inline-block;
+    margin-right: 2em;
+    color : darkgrey;
+}
+
+ul.autocar-post-info {
+    margin: 2em 0 0 0;
+    padding: 0;
+    font-size: 90%;
+    color: grey;
+}
+ul.autocar-post-info  li {
+    display: inline-block;
+    text-align: left;
+    list-style: none;
+}
+ul.autocar-post-info li:first-child {
+    width: 30%;
+}
+li.post-time {
+    width: 30%;
+}
+li.comment {
+    width:15%;
+}
+li.collect {
+    width:15%;
+}
+
+
+.article-title {
+    margin-top:1em;
+    margin-bottom: .5em;
+}
+
+.autocar-article-content{
+    margin: 1em 0;
+}
+.autocar-article-content img {
+    margin: 1em 0;
+    width: 100%;
+}
+.autocar-article-content p {
+    font-size: 1.2em;
+    line-height: 180%;
+}
+
+.autocar-brand {
+    color:red;
+    font: bold;
+}
+.autocar-linear {
+    position: absolute;
+    width: 100%;
+    left:0;
+    bottom:0;
+    background:-webkit-gradient(linear,0 0%,0 100%,from(rgba(255,255,255,0)),to(rgba(0,0,0,1))); 
+    background:-ms-linear-gradient(top,rgba(255,255,255,0),rgba(0,0,0,1));
+    background:-moz-linear-gradient(top,rgba(255,255,255,0),rgba(0,0,0,1));
+    background:-webkit-linear-gradient(top,rgba(255,255,255,0),rgba(0,0,0,1));
+}
+
+.autocar-search {
+    margin-top:.5em;
+}
+.autocar-sidebar{
+    padding-left: 2em;
+}
+
+.autocar-advertise {
+    margin-top:1.5em;
+}
+
+.autocar-editor {
+    margin-top: 70px;
+}
+.autocar-post-cover {
+    width: 100%;
+}

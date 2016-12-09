@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macro %}
+
+{% block page_leftbar %}
+<div class="popular-article">
+    <a href="http://www.baidu.com">
+        <img src="{{ url_for('static', filename='white.jpg') }}" class="img-responsive" alt="" >
+        <div class="popular-article-info autocar-linear">
+            <h1>这是这是今日头条</h1>
+            <p>这里是今日头条的摘要，这个摘要内容尽量不要太长，不然就不太美观了</p>
+        </div>
+    </a>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="popular-article">
+            <a href="http://www.baidu.com" >
+                <img src="{{ url_for('static', filename='head1.jpg') }}" class="img-responsive" alt="" >
+                <div class="popular-article-info autocar-linear">
+                    <h3>这是第一篇推荐文章</h3>
+                    <p>这里是第二篇送的丝带丝带丝带</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="popular-article">
+            <a href="http://www.baidu.com" >
+                <img src="{{ url_for('static', filename='header.jpg') }}" class="img-responsive" alt="" >
+                <div class="popular-article-info autocar-linear">
+                    <h3>这是第二篇推荐文章</h3>
+                    <p>这里是第三片文章的摘要</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="well autocar-post">
+    <div class="row">
+        <div class="col-md-4">
+            <a href="http://www.baidu.com"><img src="{{ url_for('static', filename='header.jpg') }}" class="img-responsive" alt=""></a>
+        </div>
+        <div class="col-md-8">
+            <a href="http://www.baidu.com"><h3>那辆最受段子手喜爱的豪车，终于停产了</h3></a>
+            <ul class="autocar-post-info">
+                <li><a href="http://www.baidu.com"><img src="{{ url_for('static',filename='head.jpg')}}" class="autocar-head-img img-circle"><span style="margin-left:5px;color:grey">候正国</span></a></li>
+                <li><span class="time">1小时前</span></li>
+                <li><i class="icon-comment"> </i>0</li>
+                <li><i class="icon-star"> </i>3</li>
+            </ul>
+            <p class="autocar-abstract">这里是文章的摘那么美观了。</p>
+        </div>
+    </div>
+</div>
+
+{% if pagination %}
+<div class="pagination">
+    {{ macros.paginatioin_widget(pagination, '.index') }}
+</div>
+{% endif %}
+<!--post文章列表结束-->
+{% endblock %}
+
+<!--侧栏-->
+{% block page_rightbar %}
+{% include "rightbar.html" %}
+{% endblock %}
